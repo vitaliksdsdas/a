@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useAuth } from "../hooks/use-auth";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../store/slices/userSlice";
 const HomePage = () => {
@@ -15,7 +15,9 @@ const HomePage = () => {
       <button onClick={() => dispatch(removeUser())}>sign out {email}</button>
     </div>
   ) : (
-    navigate("/login")
+    <div>
+     <NavLink to={'login'}>sdsd</NavLink>
+    </div>
   );
 };
 
